@@ -1,0 +1,21 @@
+{
+  "name": "coffeebot",
+  "version": "1.0.0",
+  "description": "Notifies the work Slack channel about the status of the various coffee machines",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "coffee",
+    "slack",
+    "bot"
+  ],
+  "author": "Even Holthe",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.11.2",
+    "mongojs": "^2.3.0",
+    "slackbots": "^0.5.1"
+  }
+}
