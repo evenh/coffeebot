@@ -100,8 +100,6 @@ var updateStatus = function(machineName, status, data){
     update: { $set: { status: status, date: updated } },
     new: true
   }, function (err, doc, lastErrorObject) {
-    console.log('params', params);
-
     if(err || !lastErrorObject.updatedExisting){
       bot.postMessage(data.channel, 'Could not fetch information for machine ' + machineName, params);
     } else {
