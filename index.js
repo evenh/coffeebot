@@ -32,6 +32,13 @@ bot.on('start', function() {
     console.log('CoffeeBot ready for a cup of Joe!');
 });
 
+bot.on('stop', function(data) {
+    console.log('Slack closed the connection');
+    console.log('This is what I know: ' + data);
+
+    bot.login();
+});
+
 bot.on('message', function(data){
   if(data.type === 'message' && data.username !== botName && /^!coffee/.test(data.text)){
     var args = data.text.split(" ");
