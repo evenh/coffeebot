@@ -71,12 +71,12 @@ var parseArgs = function(argString, data){
   if(args.length === 3){
     var status = args[2].toUpperCase();
 
-    if(status === 'UP' || status === 'DOWN'){
+    if(status === 'UP' || status === 'DOWN' || status === 'UNSTABLE'){
       console.log('Should update status for ' + args[1] + ' to ' + status);
       updateStatus(args[1], status, data);
     }
   } else {
-    bot.postMessage(data.channel, 'I don\'t know to handle that one...', params);
+    bot.postMessage(data.channel, 'I don\'t know to handle that one... Try !coffee', params);
   }
 };
 
@@ -91,6 +91,7 @@ var formatMachines = function(machines){
     m.fields.push({ title: 'Last updated', value: moment(machine.date).fromNow(), short: true });
 
     if(machine.status === 'DOWN') m.color = 'danger';
+    if(machine.status === 'UNSTABLE') m.color = 'warning';
 
     formatting.push(m);
   });
