@@ -119,7 +119,11 @@
           <compilerPlugins>
             <plugin>spring</plugin>
             <plugin>jpa</plugin>
+            <plugin>all-open</plugin>
           </compilerPlugins>
+          <pluginOptions>
+            <option>all-open:annotation=org.springframework.boot.context.properties.ConfigurationProperties</option>
+          </pluginOptions>
           <jvmTarget>${java.version}</jvmTarget>
         </configuration>
         <executions>

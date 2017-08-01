@@ -14,4 +14,8 @@ data class Machine (@Id @GeneratedValue val id: Long? = null,
     fun appendStatusChange(statusChange: StatusChange) {
         statusChanges += statusChange
     }
+
+    override fun toString(): String {
+        return "Machine(id=$id, name='$name')"
+    }
 }
