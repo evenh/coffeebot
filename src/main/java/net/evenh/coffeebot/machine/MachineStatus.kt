@@ -5,7 +5,8 @@ import java.util.*
 enum class MachineStatus(val readableStatus: String, val color: String) {
     UP("Up", "good"),
     DOWN("Down", "danger"),
-    UNSTABLE("Unstable", "warning");
+    UNSTABLE("Unstable", "warning"),
+    SLOW("Slow", "good");
 
     companion object {
         /**
